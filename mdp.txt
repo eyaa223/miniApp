@@ -1,0 +1,8 @@
+mongodb+srv://ourhenieya:ILv7TCgPKJ2cuN7T@cluster0.favp73j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+
+
+
+
+projet2 ma ghofrn:
+mongodb+srv://ourhenieya:iqMP6ad506u2c0bX@cluster0.gtpl1rc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0

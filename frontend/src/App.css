@@ -1,0 +1,138 @@
+/* Variables globales */
+:root {
+  --bg-color: rgba(255, 255, 255, 0.9); /* Fond semi-transparent dans .App */
+  --text-color: #1a1a1a;
+  --input-bg: #ffffff;
+  --input-border: #ccc;
+  --button-bg: #007bff;
+  --button-color: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: rgba(30, 30, 30, 0.85);
+    --text-color: #f9f9f9;
+    --input-bg: #1e1e1e;
+    --input-border: #444;
+    --button-bg: #1e90ff;
+    --card-shadow: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  /* Fond d'écran global */
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb'); 
+  background-size: cover;
+  background-position: center;
+  transition: background-color var(--transition-speed) ease;
+}
+
+/* Container principal */
+.App {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  padding: 30px;
+  background-color: var(--bg-color);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px var(--card-shadow);
+  backdrop-filter: blur(8px); /* Effet vitre translucide */
+}
+
+/* Titre */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+/* Formulaire */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Groupe de champ avec label + input */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.form-group input {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+/* Focus amélioré */
+.form-group input:focus-visible {
+  border-color: var(--button-bg);
+  box-shadow: 0 0 5px var(--button-bg);
+}
+
+/* Bouton */
+button {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-speed),
+    transform 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+/* Message de succès ou d'erreur */
+.message {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+  transition: opacity var(--transition-speed), transform var(--transition-speed);
+}
+
+.message.success {
+  color: green;
+}
+
+.message.error {
+  color: red;
+}
